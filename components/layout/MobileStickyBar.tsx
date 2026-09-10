@@ -20,6 +20,7 @@ export const MobileStickyBar: React.FC = () => {
         >
           <Phone className="w-4 h-4 mb-0.5" />
           <span>اتصل الآن</span>
+          <span className="text-[9px] font-mono opacity-85" dir="ltr">{companyConfig.displayPhone}</span>
         </a>
 
         {/* WhatsApp CTA */}

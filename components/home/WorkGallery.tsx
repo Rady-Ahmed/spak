@@ -332,7 +332,10 @@ export const WorkGallery: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-all active:scale-95"
               >
                 <Phone className="w-4 h-4" />
-                <span>اتصال</span>
+                <div className="flex flex-col items-start leading-tight">
+                  <span>اتصال</span>
+                  <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayPhone}</span>
+                </div>
               </a>
             </div>
           </div>

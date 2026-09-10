@@ -202,7 +202,10 @@ export const ProblemSelector: React.FC = () => {
                   title="اتصال سريع"
                 >
                   <Phone className="w-4 h-4 text-cyan-400" />
-                  <span>اتصال</span>
+                  <div className="flex flex-col items-start leading-tight">
+                    <span>اتصال</span>
+                    <span className="text-[10px] font-mono text-cyan-400" dir="ltr">{companyConfig.displayPhone}</span>
+                  </div>
                 </a>
               </div>
             </div>

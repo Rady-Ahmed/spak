@@ -41,7 +41,10 @@ export default function NotFound() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm transition-all"
           >
             <Phone className="w-4 h-4 text-cyan-400" />
-            <span>اتصل بنا</span>
+            <div className="flex flex-col items-start leading-tight">
+              <span>اتصل بنا</span>
+              <span className="text-[10px] font-mono text-cyan-400" dir="ltr">{companyConfig.displayPhone}</span>
+            </div>
           </a>
         </div>
       </div>

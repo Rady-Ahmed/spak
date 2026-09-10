@@ -49,7 +49,10 @@ export const Emergency: React.FC = () => {
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm sm:text-base shadow-lg shadow-red-600/30 hover:shadow-red-600/50 active:scale-95 transition-all border border-red-400/40"
             >
               <Phone className="w-5 h-5 animate-bounce" />
-              <span>اتصل بالطوارئ الآن</span>
+              <div className="flex flex-col items-start">
+                <span>اتصل بالطوارئ الآن</span>
+                <span className="text-[11px] font-mono opacity-90" dir="ltr">{companyConfig.displayPhone}</span>
+              </div>
             </a>
 
             <a

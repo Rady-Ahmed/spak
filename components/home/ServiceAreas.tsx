@@ -77,7 +77,10 @@ export const ServiceAreas: React.FC = () => {
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95"
             >
               <Phone className="w-4 h-4" />
-              <span>اتصل للتأكد</span>
+              <div className="flex flex-col items-start leading-tight">
+                <span>اتصل للتأكد</span>
+                <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayPhone}</span>
+              </div>
             </a>
           </div>
         </div>
