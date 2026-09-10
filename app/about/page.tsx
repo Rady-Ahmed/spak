@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "عن الشركة وخبراتنا",
   description:
-    "تعرف على سباك برو: فريق فني معتمد بخبرة تزيد عن 10 سنوات في صيانة وتأسيس شبكات السباكة الحديثة وحلول كشف التسربات دون تكسير.",
+    "تعرف على فَنّي الطائف: فريق فني معتمد بخبرة تزيد عن 10 سنوات في صيانة وتأسيس شبكات السباكة الحديثة وحلول كشف التسربات دون تكسير في الطائف.",
 };
 
 export default function AboutPage() {
@@ -62,11 +62,11 @@ export default function AboutPage() {
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          نبذة عن سباك برو لخدمات السباكة المتكاملة
+          نبذة عن فَنّي الطائف لخدمات السباكة المتكاملة
         </h1>
 
         <p className="mt-4 text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-          تأسسنا بهدف الارتقاء بمستوى خدمات السباكة والصيانة المنزلية في مصر من خلال أطقم عمل محترفة، أدوات فحص دقيقة، وتسعير معلن بضمان مكتوب.
+          تأسسنا بهدف الارتقاء بمستوى خدمات السباكة والصيانة المنزلية في الطائف والمملكة العربية السعودية من خلال أطقم عمل محترفة، أدوات فحص دقيقة، وتسعير معلن بضمان مكتوب.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              بدأت سباك برو بعد ملاحظة المعاناة الشائعة لأصحاب المنازل والشركات من السباكة التقليدية: تكسير عشوائي للسيراميك، مواعيد غير منضبطة، وانعدام الضمان بعد انتهاء الإصلاح.
+              بدأت خدمات فَنّي الطائف بعد ملاحظة المعاناة الشائعة لأصحاب المنازل والشركات من السباكة التقليدية: تكسير عشوائي للسيراميك، مواعيد غير منضبطة، وانعدام الضمان بعد انتهاء الإصلاح.
             </p>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -125,7 +125,7 @@ export default function AboutPage() {
 
               <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800/80 flex items-center justify-between text-xs">
                 <span className="text-slate-400">تغطية الخدمة</span>
-                <span className="text-cyan-300 font-bold">القاهرة الكبرى والجيزة</span>
+                <span className="text-cyan-300 font-bold">محافظة الطائف وكافة أحيائها</span>
               </div>
             </div>
           </div>

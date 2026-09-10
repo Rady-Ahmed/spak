@@ -85,7 +85,7 @@ export const BeforeAfter: React.FC = () => {
               </div>
 
               <div className="text-[11px] text-slate-400 text-left" dir="ltr">
-                Quality Certified: SpakPro Inspection 100% Passed
+                Quality Certified: Taif Technician Inspection 100% Passed
               </div>
             </div>
 

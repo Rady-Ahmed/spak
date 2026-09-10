@@ -44,17 +44,27 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         <Link
           href="/"
           onClick={onClose}
-          className="flex items-center gap-2.5 focus:outline-none"
+          className="flex items-center gap-2.5 focus:outline-none select-none"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-            <Wrench className="w-5 h-5" />
+          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-blue-500 to-cyan-400 p-[1.5px] shadow-lg shadow-blue-500/20">
+            <div className="w-full h-full rounded-[10px] bg-slate-950/85 flex items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-cyan-400/20 opacity-60" />
+              <Wrench className="w-4 h-4 text-cyan-300" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full ring-2 ring-slate-950 animate-pulse" />
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-lg tracking-tight text-white">
-              سباك برو
-            </span>
-            <span className="text-[10px] text-cyan-400 font-medium">
-              خدمات سباكة معتمدة
+          <div className="flex flex-col text-right">
+            <div className="flex items-center gap-1.5">
+              <span className="font-black text-lg tracking-tight leading-none bg-gradient-to-l from-cyan-300 via-white to-white bg-clip-text text-transparent">
+                فَنّي الطائف
+              </span>
+              <span className="text-[9px] uppercase font-extrabold px-1.5 py-0.2 rounded-full bg-blue-500/20 text-cyan-300 border border-cyan-400/30">
+                معتمد
+              </span>
+            </div>
+            <span className="text-[10px] font-medium text-slate-300 mt-1 flex items-center gap-1">
+              <span className="w-1 h-1 rounded-full bg-cyan-400 shrink-0" />
+              للسباكة والصيانة المنزلية
             </span>
           </div>
         </Link>

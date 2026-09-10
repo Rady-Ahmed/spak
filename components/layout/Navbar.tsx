@@ -52,26 +52,34 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Brand Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 group focus:outline-none"
+              className="flex items-center gap-3 group focus:outline-none select-none"
+              aria-label="فَنّي الطائف - للسباكة والصيانة المنزلية"
             >
-              <div className="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 via-blue-500 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300">
-                <Wrench className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full ring-2 ring-slate-950 animate-pulse" />
+              {/* Logo Emblem */}
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-blue-600 via-blue-500 to-cyan-400 p-[1.5px] shadow-lg shadow-blue-500/25 group-hover:shadow-cyan-500/35 group-hover:scale-105 transition-all duration-300">
+                <div className="w-full h-full rounded-[14px] bg-slate-950/85 backdrop-blur-sm flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-cyan-400/20 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-300 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full ring-2 ring-slate-950 shadow-sm animate-pulse" />
+                </div>
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-xl tracking-tight text-white">
-                    سباك برو
+
+              {/* Brand Wordmark */}
+              <div className="flex flex-col justify-center text-right">
+                <div className="flex items-center gap-2">
+                  <span className="font-black text-xl sm:text-2xl tracking-tight leading-none bg-gradient-to-l from-cyan-300 via-white to-white bg-clip-text text-transparent group-hover:from-cyan-200 group-hover:to-white transition-colors drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">
+                    فَنّي الطائف
                   </span>
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-cyan-300 border border-blue-400/30">
+                  <span className="text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-cyan-300 border border-cyan-400/30 shadow-sm">
                     معتمد
                   </span>
                 </div>
-                <span className="text-xs text-slate-400 group-hover:text-slate-300 transition-colors">
-                  خدمات سباكة احترافية 24/7
+                <span className="text-[11px] sm:text-xs font-semibold text-slate-300 group-hover:text-cyan-300/90 transition-colors tracking-wide mt-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 shadow-[0_0_6px_rgba(34,211,238,0.8)]" />
+                  للسباكة والصيانة المنزلية
                 </span>
               </div>
             </Link>

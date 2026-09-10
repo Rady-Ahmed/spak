@@ -17,7 +17,7 @@ export interface ServiceRequestFormData {
  */
 export function buildWhatsAppMessage(data: ServiceRequestFormData): string {
   const lines: string[] = [
-    "مرحبًا، أود طلب خدمة سباكة من سباك برو:",
+    "مرحبًا، أود طلب خدمة سباكة من فَنّي الطائف:",
     "---------------------------------",
     `👤 الاسم: ${data.name.trim()}`,
     `📞 الهاتف: ${data.phone.trim()}`,

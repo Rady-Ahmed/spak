@@ -25,16 +25,25 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Column 1: Brand & Bio */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                <Wrench className="w-5 h-5" />
+            <Link href="/" className="flex items-center gap-3 group select-none">
+              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 via-blue-500 to-cyan-400 p-[1.5px] shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-full h-full rounded-[14px] bg-slate-950/85 backdrop-blur-sm flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-cyan-400/20 opacity-60" />
+                  <Wrench className="w-6 h-6 text-cyan-300 group-hover:rotate-12 transition-transform duration-300" />
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-xl tracking-tight text-white">
-                  سباك برو
-                </span>
-                <span className="text-xs text-cyan-400">
-                  حلول سباكة احترافية معتمدة
+              <div className="flex flex-col text-right">
+                <div className="flex items-center gap-2">
+                  <span className="font-black text-2xl tracking-tight leading-none bg-gradient-to-l from-cyan-300 via-white to-white bg-clip-text text-transparent">
+                    فَنّي الطائف
+                  </span>
+                  <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full bg-blue-500/20 text-cyan-300 border border-cyan-400/30">
+                    معتمد
+                  </span>
+                </div>
+                <span className="text-xs font-semibold text-cyan-400/90 mt-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                  للسباكة والصيانة المنزلية
                 </span>
               </div>
             </Link>
@@ -158,7 +167,7 @@ export const Footer: React.FC = () => {
 
             {/* Direct WhatsApp */}
             <a
-              href={createWhatsAppUrl("مرحبًا، أود التواصل مع سباك برو")}
+              href={createWhatsAppUrl("مرحبًا، أود التواصل مع فَنّي الطائف")}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 hover:bg-slate-900 border border-slate-800 transition-colors text-white group"
@@ -194,7 +203,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar: Copyright & Developer Credit */}
         <div className="pt-8 mt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© 2026 سباك برو الطائف | خدمات السباكة المتكاملة. جميع الحقوق محفوظة.</p>
+          <p>© 2026 سباك الطائف | فَنّي الطائف للسباكة والصيانة المنزلية. جميع الحقوق محفوظة.</p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             {/* Developer Credit Badge */}

@@ -25,8 +25,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(companyConfig.websiteUrl),
   title: {
-    default: `سباك الطائف | ${companyConfig.name} - خدمات سباكة 24/7`,
-    template: `%s | سباك الطائف - ${companyConfig.name}`,
+    default: "سباك الطائف | فَنّي الطائف للسباكة والصيانة المنزلية 24/7",
+    template: "%s | سباك الطائف - فَنّي الطائف",
   },
   description: "أفضل سباك في الطائف - خدمات سباكة احترافية وطوارئ 24 ساعة في الطائف، الحوية، الشفا، الهدا. كشف تسربات المياه بأحدث الأجهزة بدون تكسير، تسليك مجاري، تركيب وصيانة سخانات، وتأسيس سباكة فلل مع ضمان رسمي. اتصل الآن 0560935248.",
   keywords: [
@@ -62,11 +62,8 @@ export const metadata: Metadata = {
     "سباكة السعودية",
     "سباك طوارئ 24 ساعة",
   ],
-  authors: [
-    { name: companyConfig.name, url: companyConfig.websiteUrl },
-    { name: "راضي أحمد (Rady Ahmed)", url: "https://radyahmed.vercel.app/" },
-  ],
-  creator: "راضي أحمد | Rady Ahmed (https://radyahmed.vercel.app/)",
+  authors: [{ name: companyConfig.name, url: companyConfig.websiteUrl }],
+  creator: companyConfig.name,
   publisher: companyConfig.name,
   robots: {
     index: true,
@@ -96,12 +93,7 @@ export const metadata: Metadata = {
     canonical: companyConfig.websiteUrl,
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "google-site-verification-placeholder",
-  },
-  other: {
-    "developer": "راضي أحمد - Rady Ahmed",
-    "developer-url": "https://radyahmed.vercel.app/",
-    "copyright": "© 2026 Rady Ahmed. All rights reserved.",
+    google: "google-site-verification-placeholder",
   },
 };
 
@@ -115,7 +107,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Plumber",
     name: companyConfig.name,
-    alternateName: "سباك الطائف - سباك برو السعودية",
+    alternateName: "سباك الطائف - فَنّي الطائف للسباكة والصيانة المنزلية",
     description: companyConfig.tagline,
     url: companyConfig.websiteUrl,
     telephone: companyConfig.phone,

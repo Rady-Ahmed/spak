@@ -3,7 +3,7 @@ import { companyConfig } from "@/data/company";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "سباك برو الطائف | خدمات سباكة 24/7",
+    name: "سباك الطائف | فَنّي الطائف للسباكة والصيانة 24/7",
     short_name: "سباك الطائف",
     description: "أفضل خدمات سباكة وصيانة طوارئ وكشف تسربات في الطائف 24 ساعة مع ضمان معتمد",
     start_url: "/",

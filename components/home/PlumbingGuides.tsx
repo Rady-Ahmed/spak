@@ -68,7 +68,7 @@ export const PlumbingGuides: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 mb-3">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>موسوعة سباك برو التثقيفية</span>
+            <span>موسوعة فَنّي الطائف التثقيفية</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
             أدلة وإرشادات السباكة والطوارئ المنزلية
@@ -235,7 +235,7 @@ export const PlumbingGuides: React.FC = () => {
               <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm leading-relaxed mb-6 flex items-start gap-3">
                 <Lightbulb className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-amber-300 block mb-0.5">نصيحة خبير سباك برو:</strong>
+                  <strong className="text-amber-300 block mb-0.5">نصيحة خبير فَنّي الطائف:</strong>
                   {selectedGuide.expertTip}
                 </div>
               </div>

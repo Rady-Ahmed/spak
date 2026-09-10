@@ -218,7 +218,7 @@ export const DigitalWarranty: React.FC = () => {
                 <div className="w-20 h-20 rounded-full border-2 border-dashed border-amber-400/60 bg-amber-500/10 flex flex-col items-center justify-center text-amber-300 text-center select-none shadow-lg shadow-amber-500/10 rotate-6">
                   <Lock className="w-4 h-4 mb-0.5" />
                   <span className="text-[9px] font-black uppercase">ختم معتمد</span>
-                  <span className="text-[8px] opacity-80">SPAKPRO</span>
+                  <span className="text-[8px] opacity-90 font-bold">فَنّي الطائف</span>
                 </div>
               </div>
             </div>

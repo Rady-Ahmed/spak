@@ -13,7 +13,7 @@ export default function Loading() {
         </div>
       </div>
       <p className="text-sm font-bold text-slate-300">
-        جارٍ تحميل بيانات سباك برو...
+        جارٍ تحميل بيانات فَنّي الطائف...
       </p>
     </div>
   );

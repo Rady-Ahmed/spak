@@ -48,7 +48,7 @@ export default function NotFound() {
           </a>
 
           <a
-            href={createWhatsAppUrl("مرحبًا، أود الاستفسار من فريق سباك برو")}
+            href={createWhatsAppUrl("مرحبًا، أود الاستفسار من فريق فَنّي الطائف")}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all active:scale-95"
