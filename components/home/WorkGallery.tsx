@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Wrench,
   Droplets,
@@ -33,6 +34,7 @@ interface GalleryProject {
   toolsUsed: string[];
   specs: string[];
   executionTime: string;
+  image: string;
 }
 
 export const WorkGallery: React.FC = () => {
@@ -53,8 +55,9 @@ export const WorkGallery: React.FC = () => {
       id: "p1",
       title: "كشف وعزل تسريب خفي داخل جدار فيلا",
       category: "تسريبات",
-      location: "الرياض - حي الملقا",
+      location: "الطائف - حي الحوية",
       badge: "فحص حراري دقيق",
+      image: "/images/leak-detection-thermal.jpg",
       summary: "تحديد ثقب بقطر 2 ملم في خط التغذية الحار تحت رخام الحمام الرئيسي دون تكسير الجدار بالكامل، وإصلاحه بلحام ألماني واختبار 12 بار.",
       beforeState: "رطوبة متزايدة وتلف بدهان الغرفة المجاورة وسخونة غير طبيعية في أرضية الحمام مع ارتفاع فاتورة المياه.",
       afterState: "عزل الثقب باللحام الحراري الألماني واختبار ضغط هيدروليكي 12 بار واستعادة سلامة الحائط بنسبة 100%.",
@@ -66,8 +69,9 @@ export const WorkGallery: React.FC = () => {
       id: "p2",
       title: "تأسيس شبكة تغذية وصرف متكاملة لفيلا وقصر مودرن",
       category: "مواسير",
-      location: "الرياض - حي النرجس",
+      location: "الطائف - حي السلامة",
       badge: "تأسيس معتمد",
+      image: "/images/pipe-installation.jpg",
       summary: "تمديد شبكة مواسير بولي بروبلين خضراء معزولة حرارياً بالكامل وتوزيع خطوط ضغط متوازنة لـ 4 حمامات ومطبخ رئيسي.",
       beforeState: "شبكة قديمة متآكلة تسبب انخفاض حاد في ضغط المياه وتغير لون الماء إلى صدأ بني خفيف.",
       afterState: "استبدال كامل للمنظومة بشبكة بولي بروبلين معتمدة مطابقة للمواصفات وضمان مصنعي 10 سنوات.",
@@ -79,8 +83,9 @@ export const WorkGallery: React.FC = () => {
       id: "p3",
       title: "تركيب شاسيه مدفون جروهي مع كرسي معلق",
       category: "أدوات صحية",
-      location: "جدة - حي الروضة",
+      location: "الطائف - حي الشهداء",
       badge: "تشطيب فندقي",
+      image: "/images/heater-maintenance.jpg",
       summary: "تثبيت صندوق طرد مدفون بميزان ليزر رقمي، وتوصيل عوازل السيليكون المضادة للعفن مع زر تحكم هيدروليكي فخم.",
       beforeState: "تجديد الحمام ورغبة العميل في إخفاء خزان الطرد وإعطاء مظهر عصري يوفر مساحة أرضية سهلة التنظيف.",
       afterState: "تثبيت صلب للشاسيه بميزان ليزر ثلاثي، مع عزل صوتي واختبار انسياب للمياه دون أي تسريب داخلي.",
@@ -92,8 +97,9 @@ export const WorkGallery: React.FC = () => {
       id: "p4",
       title: "إصلاح وصيانة سخان مركزي ودينمو ضغط مياه",
       category: "سخانات",
-      location: "الدمام - حي الشاطئ",
+      location: "الطائف - حي الفيصلية",
       badge: "أمان متكامل",
+      image: "/images/heater-maintenance.jpg",
       summary: "إزالة التكلسات الملحية من دورة التسخين، ضبط صمام الأمان وتغيير الرداخ الأصلي واستعادة تدفق المياه الساخنة بكفاءة 100%.",
       beforeState: "ضعف حاد في ضغط المياه الساخنة مع تنقيط مستمر أسفل الخزان وصدور صوت غير طبيعي من مضخة الضغط.",
       afterState: "تنظيف دورة السخان بمحلول فوسفاتي آمن، ضبط حساس الأمان ومعايرة مضخة الضغط لتدفق متوازن.",
@@ -105,8 +111,9 @@ export const WorkGallery: React.FC = () => {
       id: "p5",
       title: "تسليك خط تصريف رئيسي لمطعم بالسوستة الهيدروليكية",
       category: "صرف",
-      location: "الرياض - حي السليمانية",
+      location: "الطائف - حي المنتزه",
       badge: "تدخل طوارئ سريع",
+      image: "/images/drain-cleaning.jpg",
       summary: "تفتيت كتل دهنية صلبة متراكمة على مسافة 18 متراً داخل الماسورة الرئيسية وغسيل الخط بضغط الماء العالي خلال 40 دقيقة.",
       beforeState: "طفح مفاجئ في بالوعات المطبخ وتهديد بوقف العمل في المطعم نتيجة تراكم الدهون والشحوم الصلبة.",
       afterState: "اختراق الانسداد بالكامل، تنظيف جدران المواسير بالضغط العالي وتطهير الخط وتعقيمه تماماً.",
@@ -118,8 +125,9 @@ export const WorkGallery: React.FC = () => {
       id: "p6",
       title: "تركيب كابينة شاور زجاجية وخلاط شلال ذكي",
       category: "أدوات صحية",
-      location: "الرياض - حي حطين",
+      location: "الطائف - حي الربوة",
       badge: "تصميم عصري",
+      image: "/images/pipe-installation.jpg",
       summary: "تركيب دقيق ومحكم لمنع تسرب المياه من حواف الكابينة الزجاجية مع ربط خلاط الشلال وضبط ضغط المياه المتدفق.",
       beforeState: "تسرب مستمر لمياه الاستحمام إلى أرضية الحمام الخارجية وتلف باركيه المدخل المجاور.",
       afterState: "عزل زجاجي محكم بفواصل سيليكونية فائقة النقاء وضبط استواء المسارات لحركة انسيابية ناعمة.",
@@ -185,48 +193,59 @@ export const WorkGallery: React.FC = () => {
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group relative p-6 sm:p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer"
+              className="group relative rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col cursor-pointer overflow-hidden"
             >
-              <div>
-                {/* Project Header Meta */}
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
-                    {project.badge}
-                  </span>
-                  <span className="text-xs text-slate-400">
-                    📍 {project.location}
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2.5">
-                  {project.title}
-                </h3>
-
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-                  {project.summary}
-                </p>
+              {/* Project Image */}
+              <div className="relative w-full aspect-video overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
+                {/* Badge overlay */}
+                <span className="absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/80 backdrop-blur-sm text-white border border-cyan-400/30">
+                  {project.badge}
+                </span>
+                <span className="absolute bottom-3 left-3 text-[11px] text-slate-300 bg-slate-950/70 backdrop-blur-sm px-2.5 py-1 rounded-lg">
+                  📍 {project.location}
+                </span>
               </div>
 
-              {/* Specs pill list & View Action */}
-              <div>
-                <div className="pt-4 border-t border-slate-800/80 flex flex-wrap gap-2 mb-4">
-                  {project.specs.map((spec, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-300 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800"
-                    >
-                      <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                      <span>{spec}</span>
-                    </span>
-                  ))}
+              {/* Card Content */}
+              <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                    {project.summary}
+                  </p>
                 </div>
 
-                <div className="flex items-center justify-between text-xs font-bold text-cyan-400 group-hover:text-cyan-300">
-                  <span className="flex items-center gap-1.5">
-                    <Eye className="w-3.5 h-3.5" />
-                    عرض التقرير الفني
-                  </span>
-                  <span>←</span>
+                {/* Specs pill list & View Action */}
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.specs.map((spec, i) => (
+                      <span
+                        key={i}
+                        className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-300 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800"
+                      >
+                        <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                        <span>{spec}</span>
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs font-bold text-cyan-400 group-hover:text-cyan-300">
+                    <span className="flex items-center gap-1.5">
+                      <Eye className="w-3.5 h-3.5" />
+                      عرض التقرير الفني
+                    </span>
+                    <span>←</span>
+                  </div>
                 </div>
               </div>
             </div>
