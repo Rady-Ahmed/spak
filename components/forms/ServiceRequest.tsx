@@ -60,6 +60,15 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
   const [photoSelected, setPhotoSelected] = useState<string | null>(null);
   const [isLocating, setIsLocating] = useState(false);
   const [locationDetected, setLocationDetected] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+
+  const sanitizeInput = (val: string): string => {
+    return val
+      .replace(/[<>]/g, "")
+      .replace(/javascript:/gi, "")
+      .replace(/on\w+=/gi, "")
+      .trim();
+  };
 
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
@@ -77,7 +86,7 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
           mapsLocationUrl: mapsUrl,
           address: prev.address.trim()
             ? prev.address
-            : `موقعي الجغرافي المباشر (GPS)`,
+            : `موقعي الجغرافي المباشر في السعودية (GPS)`,
         }));
         setIsLocating(false);
         setLocationDetected(true);
@@ -92,29 +101,38 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
   };
 
   const validate = (): boolean => {
+    // If honeypot is filled, silent reject bot
+    if (honeypot.trim()) {
+      return false;
+    }
+
     const newErrors: FormErrors = {};
 
-    if (!formData.name.trim()) {
+    const cleanName = sanitizeInput(formData.name);
+    if (!cleanName) {
       newErrors.name = "يرجى كتابة الاسم الكريم";
-    } else if (formData.name.trim().length < 3) {
+    } else if (cleanName.length < 3) {
       newErrors.name = "الاسم يجب أن يكون 3 أحرف على الأقل";
     }
 
-    if (!formData.phone.trim()) {
+    const cleanPhone = sanitizeInput(formData.phone);
+    if (!cleanPhone) {
       newErrors.phone = "يرجى إدخال رقم الهاتف";
-    } else if (!/^[0-9+ ]{8,16}$/.test(formData.phone.trim())) {
-      newErrors.phone = "يرجى إدخال رقم هاتف صحيح";
+    } else if (!/^[0-9+ ]{8,16}$/.test(cleanPhone)) {
+      newErrors.phone = "يرجى إدخال رقم هاتف صحيح (مثال: 05XXXXXXXX)";
     }
 
-    if (!formData.address.trim()) {
-      newErrors.address = "يرجى إدخال العنوان أو المنطقة";
+    const cleanAddress = sanitizeInput(formData.address);
+    if (!cleanAddress) {
+      newErrors.address = "يرجى إدخال العنوان أو الحي أو استخدام زر GPS";
     }
 
     if (!formData.service.trim()) {
       newErrors.service = "يرجى اختيار نوع الخدمة";
     }
 
-    if (!formData.problemDescription.trim()) {
+    const cleanProblem = sanitizeInput(formData.problemDescription);
+    if (!cleanProblem) {
       newErrors.problemDescription = "يرجى توضيح وصف المشكلة باختصار";
     }
 
@@ -139,12 +157,22 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
 
     setIsSubmitting(true);
 
+    const sanitizedData: ServiceRequestFormData = {
+      ...formData,
+      name: sanitizeInput(formData.name),
+      phone: sanitizeInput(formData.phone),
+      address: sanitizeInput(formData.address),
+      problemDescription: sanitizeInput(formData.problemDescription),
+      notes: formData.notes ? sanitizeInput(formData.notes) : "",
+      preferredDateTime: formData.preferredDateTime ? sanitizeInput(formData.preferredDateTime) : "",
+    };
+
     // Simulate polished transition before redirecting to WhatsApp
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
 
-      const message = buildWhatsAppMessage(formData);
+      const message = buildWhatsAppMessage(sanitizedData);
       const url = createWhatsAppUrl(message);
 
       // Open WhatsApp after brief success confirmation
@@ -210,6 +238,18 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
       ) : (
         /* Form */
         <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+          {/* Anti-Bot Honeypot Field (Hidden from real users) */}
+          <input
+            type="text"
+            name="security_hp"
+            aria-hidden="true"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            className="hidden opacity-0 pointer-events-none absolute -left-[9999px]"
+          />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             {/* Name */}
             <div>
@@ -219,7 +259,7 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="مثال: أحمد محمد"
+                  placeholder="مثال: عبد العزيز الشمري"
                   value={formData.name}
                   onChange={(e) => {
                     setFormData({ ...formData, name: e.target.value });
@@ -244,13 +284,13 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
             {/* Phone */}
             <div>
               <label className="block text-xs sm:text-sm font-bold text-slate-200 mb-2">
-                رقم الهاتف (أو واتساب) <span className="text-red-400">*</span>
+                رقم الجوال أو واتساب <span className="text-red-400">*</span>
               </label>
               <div className="relative">
                 <input
                   type="tel"
                   dir="ltr"
-                  placeholder="010XXXXXXXX"
+                  placeholder="05XXXXXXXX"
                   value={formData.phone}
                   onChange={(e) => {
                     setFormData({ ...formData, phone: e.target.value });
@@ -302,7 +342,7 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="block text-xs sm:text-sm font-bold text-slate-200">
-                  العنوان والمنطقة <span className="text-red-400">*</span>
+                  العنوان والحي (أو GPS) <span className="text-red-400">*</span>
                 </label>
                 <button
                   type="button"
@@ -327,7 +367,7 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="مثال: التجمع الخامس، النرجس، عمارة 15 أو اضغط الزر أعلاه"
+                  placeholder="مثال: الرياض - حي الملقا، شارع أنس بن مالك أو اضغط زر GPS"
                   value={formData.address}
                   onChange={(e) => {
                     setFormData({ ...formData, address: e.target.value });

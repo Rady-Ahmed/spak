@@ -50,15 +50,30 @@ export function buildWhatsAppMessage(data: ServiceRequestFormData): string {
 }
 
 /**
- * توليد رابط الواتساب الرسمي المباشر مع نص مشفر
+ * توليد رابط الواتساب الرسمي المباشر مع نص مشفر وآمن
  */
-export function createWhatsAppUrl(message?: string, customNumber?: string): string {
+export function createWhatsAppUrl(
+  messageOrConfig?: string | { service?: string; problem?: string; text?: string },
+  customNumber?: string
+): string {
   const number = customNumber || companyConfig.whatsapp;
   const baseUrl = `https://wa.me/${number}`;
-  if (!message) {
+  if (!messageOrConfig) {
     return baseUrl;
   }
-  return `${baseUrl}?text=${encodeURIComponent(message)}`;
+
+  let finalMessage = "";
+  if (typeof messageOrConfig === "string") {
+    finalMessage = messageOrConfig;
+  } else {
+    const parts: string[] = [];
+    if (messageOrConfig.text) parts.push(messageOrConfig.text);
+    if (messageOrConfig.service) parts.push(`🛠️ بخصوص خدمة: ${messageOrConfig.service}`);
+    if (messageOrConfig.problem) parts.push(`⚠️ المشكلة: ${messageOrConfig.problem}`);
+    finalMessage = parts.join("\n");
+  }
+
+  return `${baseUrl}?text=${encodeURIComponent(finalMessage.trim())}`;
 }
 
 /**
