@@ -62,8 +62,11 @@ export const metadata: Metadata = {
     "سباكة السعودية",
     "سباك طوارئ 24 ساعة",
   ],
-  authors: [{ name: companyConfig.name, url: companyConfig.websiteUrl }],
-  creator: companyConfig.name,
+  authors: [
+    { name: companyConfig.name, url: companyConfig.websiteUrl },
+    { name: "راضي أحمد (Rady Ahmed)", url: "https://radyahmed.vercel.app/" },
+  ],
+  creator: "راضي أحمد | Rady Ahmed (https://radyahmed.vercel.app/)",
   publisher: companyConfig.name,
   robots: {
     index: true,
@@ -93,7 +96,12 @@ export const metadata: Metadata = {
     canonical: companyConfig.websiteUrl,
   },
   verification: {
-    google: "google-site-verification-placeholder",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "google-site-verification-placeholder",
+  },
+  other: {
+    "developer": "راضي أحمد - Rady Ahmed",
+    "developer-url": "https://radyahmed.vercel.app/",
+    "copyright": "© 2026 Rady Ahmed. All rights reserved.",
   },
 };
 
