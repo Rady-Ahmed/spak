@@ -24,52 +24,75 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(companyConfig.websiteUrl),
   title: {
-    default: `${companyConfig.name} | سباك بالرياض وجدة وكافة مدن السعودية 24/7`,
-    template: `%s | ${companyConfig.name}`,
+    default: `سباك الطائف | ${companyConfig.name} - خدمات سباكة 24/7`,
+    template: `%s | سباك الطائف - ${companyConfig.name}`,
   },
-  description: "خدمات سباكة احترافية وطوارئ 24 ساعة في الرياض، جدة، الدمام وكافة مدن المملكة. كشف تسربات المياه بأحدث الأجهزة بدون تكسير، تقارير معتمدة لشركة المياه الوطنية، تسليك مجاري بالضغط، وتأسيس فلل مع ضمان رسمي.",
+  description: "أفضل سباك في الطائف - خدمات سباكة احترافية وطوارئ 24 ساعة في الطائف، الحوية، الشفا، الهدا. كشف تسربات المياه بأحدث الأجهزة بدون تكسير، تسليك مجاري، تركيب وصيانة سخانات، وتأسيس سباكة فلل مع ضمان رسمي. اتصل الآن 0560935248.",
   keywords: [
-    "سباك بالرياض",
-    "سباك بجدة",
-    "سباك بالدمام",
-    "كشف تسربات المياه بالرياض",
-    "كشف تسربات المياه معتمد شركة المياه الوطنية",
-    "حل مشكلة ارتفاع فاتورة المياه",
-    "تسليك مجاري بالرياض",
-    "تسليك مجاري بجدة",
-    "سباك طوارئ 24 ساعة",
-    "سباك ممتاز بالرياض",
-    "سباك فلبيني بالرياض",
-    "سباك شاطر بالرياض",
-    "سباك شمال الرياض",
-    "سباك شرق الرياض",
-    "تأسيس سباكة فلل وقصور",
-    "صيانة سخانات الخزف السعودي",
-    "تصليح دينمو ومضخات مياه",
+    // الطائف - الكلمات الرئيسية
+    "سباك الطائف",
+    "سباك في الطائف",
+    "سباك بالطائف",
+    "سباك طوارئ الطائف",
+    "سباك ممتاز بالطائف",
+    "رقم سباك الطائف",
+    "افضل سباك في الطائف",
+    "سباك معتمد الطائف",
+    // خدمات الطائف
+    "كشف تسربات المياه بالطائف",
+    "تسليك مجاري الطائف",
+    "تسليك بالوعة الطائف",
+    "صيانة سباكة الطائف",
+    "تركيب سخان الطائف",
+    "تصليح سخان بالطائف",
+    "تأسيس سباكة فلل الطائف",
+    "تركيب مضخة ماء الطائف",
+    // أحياء الطائف
+    "سباك حي الشهداء الطائف",
+    "سباك الحوية الطائف",
+    "سباك الشفا الطائف",
+    "سباك الهدا الطائف",
+    "سباك حي السلامة الطائف",
+    "سباك حي النزهة الطائف",
+    // عام السعودية
+    "سباك بالسعودية 24 ساعة",
+    "كشف تسربات معتمد شركة المياه الوطنية",
+    "تسليك مجاري بالضغط",
     "سباكة السعودية",
+    "سباك طوارئ 24 ساعة",
   ],
-  authors: [{ name: companyConfig.name }],
+  authors: [{ name: companyConfig.name, url: companyConfig.websiteUrl }],
   creator: companyConfig.name,
   publisher: companyConfig.name,
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
     locale: "ar_SA",
     url: companyConfig.websiteUrl,
-    title: `${companyConfig.name} | سباك بالرياض وجدة - خدمات معتمدة 24 ساعة`,
-    description: "أفضل خدمات سباكة معتمدة بالمملكة العربية السعودية. استجابة فورية خلال 30 دقيقة، كشف تسربات، تسليك مجاري، وضمان شامل 3 سنوات.",
+    title: `سباك الطائف | ${companyConfig.name} - خدمات معتمدة 24 ساعة`,
+    description: "أفضل سباك في الطائف بالمملكة العربية السعودية. استجابة فورية خلال 30 دقيقة، كشف تسربات المياه، تسليك مجاري، وضمان شامل على كافة الأعمال.",
     siteName: companyConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${companyConfig.name} | سباك بالرياض والمملكة`,
-    description: "خدمات سباكة طوارئ واحترافية في الرياض وكافة مدن السعودية 24/7 مع ضمان معتمد.",
+    title: `سباك الطائف | ${companyConfig.name}`,
+    description: "خدمات سباكة طوارئ واحترافية في الطائف 24/7 - كشف تسربات، تسليك مجاري، وضمان معتمد.",
   },
   alternates: {
     canonical: companyConfig.websiteUrl,
+  },
+  verification: {
+    google: "google-site-verification-placeholder",
   },
 };
 
@@ -78,12 +101,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // LocalBusiness Schema.org JSON-LD for Saudi Arabian Search Visibility
+  // LocalBusiness Schema.org JSON-LD for Taif / Saudi Arabian Search Visibility
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Plumber",
     name: companyConfig.name,
-    alternateName: "سباك بالرياض - سباك برو السعودية",
+    alternateName: "سباك الطائف - سباك برو السعودية",
     description: companyConfig.tagline,
     url: companyConfig.websiteUrl,
     telephone: companyConfig.phone,
@@ -91,15 +114,16 @@ export default function RootLayout({
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Riyadh",
-      addressRegion: "Riyadh Province",
+      addressLocality: "الطائف",
+      addressRegion: "منطقة مكة المكرمة",
       addressCountry: "SA",
       streetAddress: companyConfig.address,
+      postalCode: "21944",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 24.7136,
-      longitude: 46.6753,
+      latitude: 21.2703,
+      longitude: 40.4158,
     },
     openingHoursSpecification: [
       {
@@ -118,6 +142,15 @@ export default function RootLayout({
       },
     ],
     areaServed: companyConfig.serviceAreas,
+    hasMap: companyConfig.mapsUrl,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: companyConfig.phone,
+      contactType: "customer service",
+      areaServed: "SA",
+      availableLanguage: "Arabic",
+      contactOption: "TollFree",
+    },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
