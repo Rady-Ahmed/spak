@@ -139,7 +139,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all active:scale-95"
           >
             <MessageCircle className="w-4 h-4" />
-            <span>واتساب</span>
+            <div className="flex flex-col items-center leading-tight">
+              <span>واتساب</span>
+              <span className="text-[10px] font-mono opacity-85" dir="ltr">{companyConfig.displayWhatsapp}</span>
+            </div>
           </a>
         </div>
 

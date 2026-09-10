@@ -18,6 +18,7 @@ import {
   ArrowLeft,
   Eye,
 } from "lucide-react";
+import { companyConfig } from "@/data/company";
 import { createWhatsAppUrl, createPhoneUrl } from "@/lib/whatsapp";
 
 interface GalleryProject {
@@ -324,7 +325,10 @@ export const WorkGallery: React.FC = () => {
                 className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>طلب معاينة لحالة مشابهة عبر WhatsApp</span>
+                <div className="flex flex-col items-start leading-tight">
+                  <span>طلب معاينة لحالة مشابهة عبر WhatsApp</span>
+                  <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
+                </div>
               </a>
 
               <a

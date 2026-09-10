@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { faqData } from "@/data/faq";
-import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
-import { createWhatsAppUrl } from "@/lib/whatsapp";
+import { ChevronDown, HelpCircle, MessageCircle, Phone } from "lucide-react";
+import { companyConfig } from "@/data/company";
+import { createWhatsAppUrl, createPhoneUrl } from "@/lib/whatsapp";
 
 export const FAQSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(faqData[0].id);
@@ -77,19 +78,31 @@ export const FAQSection: React.FC = () => {
               لديك سؤال آخر لم تجد إجابته هنا؟
             </h4>
             <p className="text-xs text-slate-400 mt-1">
-              فريق الدعم الفني جاهز للرد على استفسارك في أي وقت عبر WhatsApp
+              فريق الدعم الفني جاهز للرد على استفسارك في أي وقت عبر الهاتف أو WhatsApp
             </p>
           </div>
 
-          <a
-            href={createWhatsAppUrl("مرحبًا، لدي استفسار بخصوص خدمات السباكة")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs shadow-md transition-all active:scale-95 shrink-0"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>اسأل عبر WhatsApp</span>
-          </a>
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+            <a
+              href={createPhoneUrl()}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all active:scale-95"
+            >
+              <Phone className="w-4 h-4 text-cyan-300" />
+              <span>اتصال مباشر:</span>
+              <span dir="ltr" className="font-mono text-cyan-200">{companyConfig.displayPhone}</span>
+            </a>
+
+            <a
+              href={createWhatsAppUrl("مرحبًا، لدي استفسار بخصوص خدمات السباكة")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs shadow-md transition-all active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>واتساب:</span>
+              <span dir="ltr" className="font-mono text-emerald-100">{companyConfig.displayWhatsapp}</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

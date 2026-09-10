@@ -64,7 +64,10 @@ export const Emergency: React.FC = () => {
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/30 active:scale-95 transition-all"
             >
               <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp طوارئ</span>
+              <div className="flex flex-col items-start leading-tight">
+                <span>WhatsApp طوارئ</span>
+                <span className="text-[11px] font-mono opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
+              </div>
             </a>
           </div>
         </div>

@@ -81,6 +81,7 @@ export default function ServicesPage() {
           >
             <MessageCircle className="w-4 h-4" />
             <span>تحدث عبر WhatsApp</span>
+            <span className="text-xs font-mono opacity-90 border-r border-white/30 pr-2 mr-1" dir="ltr">{companyConfig.displayWhatsapp}</span>
           </a>
         </div>
       </div>

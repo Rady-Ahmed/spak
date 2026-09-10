@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { servicesData, ServiceItem } from "@/data/services";
+import { companyConfig } from "@/data/company";
 import { createPhoneUrl, createWhatsAppUrl } from "@/lib/whatsapp";
 import {
   Droplets,
@@ -193,7 +194,10 @@ export const ProblemSelector: React.FC = () => {
                   className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-bold shadow-lg shadow-emerald-600/20 transition-all active:scale-95"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>طلب عبر WhatsApp</span>
+                  <div className="flex flex-col items-start leading-tight">
+                    <span>طلب عبر WhatsApp</span>
+                    <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
+                  </div>
                 </a>
 
                 <a

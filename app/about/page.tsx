@@ -179,17 +179,28 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/#request-service"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/30 transition-all active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/30 transition-all active:scale-95"
             >
               <span>طلب خدمة الآن</span>
               <ArrowLeft className="w-4 h-4" />
             </Link>
             <a
               href={createPhoneUrl()}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all"
+              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all"
             >
               <Phone className="w-4 h-4 text-cyan-400" />
+              <span>اتصال:</span>
               <span dir="ltr">{companyConfig.displayPhone}</span>
+            </a>
+            <a
+              href={createWhatsAppUrl("مرحبًا، أود الاستفسار عن خدمات السباكة")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>واتساب:</span>
+              <span dir="ltr">{companyConfig.displayWhatsapp}</span>
             </a>
           </div>
         </div>

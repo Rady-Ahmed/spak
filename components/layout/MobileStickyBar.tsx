@@ -32,6 +32,7 @@ export const MobileStickyBar: React.FC = () => {
         >
           <MessageCircle className="w-4 h-4 mb-0.5" />
           <span>واتساب</span>
+          <span className="text-[9px] font-mono opacity-85" dir="ltr">{companyConfig.displayWhatsapp}</span>
         </a>
 
         {/* Service Request Form Jump */}

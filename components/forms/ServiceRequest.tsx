@@ -22,6 +22,7 @@ import {
   FileText,
   Calendar,
   Navigation,
+  MessageCircle,
 } from "lucide-react";
 
 interface FormErrors {
@@ -193,7 +194,7 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="relative z-10 max-w-2xl mb-8 sm:mb-10 text-right">
+      <div className="relative z-10 max-w-2xl mb-6 sm:mb-8 text-right">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-cyan-300 border border-blue-400/30 mb-3">
           <Wrench className="w-3.5 h-3.5 text-cyan-400" />
           <span>حجز سريع وبدون انتظار</span>
@@ -204,6 +205,34 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
         <p className="text-slate-300 text-sm sm:text-base mt-2 leading-relaxed">
           {subtitle}
         </p>
+      </div>
+
+      {/* Direct Instant Contact Banner */}
+      <div className="relative z-10 mb-8 p-4 rounded-2xl bg-slate-950/80 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-inner">
+        <div className="flex items-center gap-2.5 text-xs text-slate-300">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="font-bold text-white">اتصال فوري ومباشر دون انتظار:</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+          <a
+            href={createPhoneUrl()}
+            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all active:scale-95"
+          >
+            <Phone className="w-3.5 h-3.5 text-cyan-300" />
+            <span>اتصال فوري:</span>
+            <span dir="ltr" className="font-mono text-cyan-200">{companyConfig.displayPhone}</span>
+          </a>
+          <a
+            href={createWhatsAppUrl("مرحبًا، أحتاج فني سباكة عاجل الآن")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs shadow-md transition-all active:scale-95"
+          >
+            <MessageCircle className="w-3.5 h-3.5" />
+            <span>واتساب مباشر:</span>
+            <span dir="ltr" className="font-mono text-emerald-100">{companyConfig.displayWhatsapp}</span>
+          </a>
+        </div>
       </div>
 
       {isSuccess ? (
@@ -505,16 +534,27 @@ export const ServiceRequest: React.FC<ServiceRequestProps> = ({
               )}
             </button>
 
-            {/* Direct Phone Backup CTA */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400">
-              <span>أو تفضل الاتصال الفوري؟</span>
-              <a
-                href={createPhoneUrl()}
-                className="font-bold text-cyan-400 hover:text-cyan-300 underline inline-flex items-center gap-1"
-              >
-                <Phone className="w-3.5 h-3.5" />
-                <span dir="ltr">{companyConfig.displayPhone}</span>
-              </a>
+            {/* Direct Phone & WhatsApp Backup CTA */}
+            <div className="flex flex-wrap items-center gap-2.5 text-xs sm:text-sm text-slate-400">
+              <span>أو تفضل التواصل الفوري؟</span>
+              <div className="flex items-center gap-2">
+                <a
+                  href={createPhoneUrl()}
+                  className="font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 hover:border-cyan-500/40 transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span dir="ltr">{companyConfig.displayPhone}</span>
+                </a>
+                <a
+                  href={createWhatsAppUrl("مرحبًا، أود التواصل المباشر مع فني السباكة")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 hover:border-emerald-500/40 transition-colors"
+                >
+                  <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span dir="ltr">{companyConfig.displayWhatsapp}</span>
+                </a>
+              </div>
             </div>
           </div>
         </form>

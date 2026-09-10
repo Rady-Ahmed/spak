@@ -132,7 +132,10 @@ export default async function ServiceDetailPage({ params }: Props) {
               className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all active:scale-95"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>طلب عبر WhatsApp</span>
+              <div className="flex flex-col items-start leading-tight">
+                <span>طلب عبر WhatsApp</span>
+                <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
+              </div>
             </a>
 
             <Link

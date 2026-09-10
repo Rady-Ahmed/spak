@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { servicesData, ServiceItem } from "@/data/services";
+import { companyConfig } from "@/data/company";
 import { createWhatsAppUrl, createPhoneUrl } from "@/lib/whatsapp";
 import {
   Wrench,
@@ -287,11 +288,20 @@ export const ServiceExplorer: React.FC = () => {
                 <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
                   <Link
                     href={`/services/${activeService.slug}`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold shadow-md shadow-blue-600/20 transition-all active:scale-95"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold shadow-md shadow-blue-600/20 transition-all active:scale-95"
                   >
-                    <span>صفحة الخدمة الكاملة</span>
+                    <span>تفاصيل الخدمة</span>
                     <ArrowLeft className="w-4 h-4" />
                   </Link>
+
+                  <a
+                    href={createPhoneUrl()}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs sm:text-sm font-bold border border-slate-700 shadow-md transition-all active:scale-95"
+                  >
+                    <Phone className="w-4 h-4 text-cyan-400" />
+                    <span>اتصال:</span>
+                    <span className="font-mono text-cyan-300 text-xs" dir="ltr">{companyConfig.displayPhone}</span>
+                  </a>
 
                   <a
                     href={createWhatsAppUrl(
@@ -302,7 +312,8 @@ export const ServiceExplorer: React.FC = () => {
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>WhatsApp</span>
+                    <span>واتساب</span>
+                    <span className="font-mono text-xs opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
                   </a>
                 </div>
               </div>

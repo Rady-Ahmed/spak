@@ -19,6 +19,7 @@ import {
   Clock,
   ShieldAlert,
 } from "lucide-react";
+import { companyConfig } from "@/data/company";
 import { createWhatsAppUrl, createPhoneUrl } from "@/lib/whatsapp";
 
 interface DiagnosticResult {
@@ -466,7 +467,7 @@ export const DiagnosticWizard: React.FC = () => {
                   className="flex-1 inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition-all active:scale-95 cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>إرسال هذا التشخيص وحجز فني عبر WhatsApp</span>
+                  <span>إرسال هذا التشخيص وحجز فني عبر WhatsApp ({companyConfig.displayWhatsapp})</span>
                 </a>
 
                 <a

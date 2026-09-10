@@ -82,6 +82,19 @@ export const ServiceAreas: React.FC = () => {
                 <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayPhone}</span>
               </div>
             </a>
+
+            <a
+              href={createWhatsAppUrl("مرحبًا، أود التأكد من تغطية موقعي في الطائف")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <div className="flex flex-col items-start leading-tight">
+                <span>واتساب</span>
+                <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

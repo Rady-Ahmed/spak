@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Wrench, Home, Phone, ArrowLeft } from "lucide-react";
+import { Wrench, Home, Phone, MessageCircle, ArrowLeft } from "lucide-react";
 import { companyConfig } from "@/data/company";
-import { createPhoneUrl } from "@/lib/whatsapp";
+import { createPhoneUrl, createWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function NotFound() {
   return (
@@ -44,6 +44,19 @@ export default function NotFound() {
             <div className="flex flex-col items-start leading-tight">
               <span>اتصل بنا</span>
               <span className="text-[10px] font-mono text-cyan-400" dir="ltr">{companyConfig.displayPhone}</span>
+            </div>
+          </a>
+
+          <a
+            href={createWhatsAppUrl("مرحبًا، أود الاستفسار من فريق سباك برو")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all active:scale-95"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <div className="flex flex-col items-start leading-tight">
+              <span>واتساب</span>
+              <span className="text-[10px] font-mono opacity-90" dir="ltr">{companyConfig.displayWhatsapp}</span>
             </div>
           </a>
         </div>
