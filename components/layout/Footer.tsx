@@ -192,19 +192,37 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Map Link */}
-        <div className="pt-8 mt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} {companyConfig.name}. جميع الحقوق محفوظة.</p>
+        {/* Bottom Bar: Copyright & Developer Credit */}
+        <div className="pt-8 mt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <p>© 2026 سباك برو الطائف | خدمات السباكة المتكاملة. جميع الحقوق محفوظة.</p>
 
-          <a
-            href={companyConfig.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
-          >
-            <span>عرض موقعنا على خرائط Google</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* Developer Credit Badge */}
+            <div className="flex items-center gap-1.5 text-slate-400">
+              <span>تصميم وتطوير:</span>
+              <a
+                href="https://radyahmed.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="موقع المطور راضي أحمد"
+                className="inline-flex items-center gap-1 font-bold text-cyan-400 hover:text-cyan-300 transition-all px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 shadow-sm"
+              >
+                <span>راضي أحمد</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+
+            {/* Google Maps Link */}
+            <a
+              href={companyConfig.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
+            >
+              <span>خرائط Google</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

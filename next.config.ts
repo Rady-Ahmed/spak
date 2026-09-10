@@ -30,6 +30,10 @@ const securityHeaders = [
     value: "camera=(), microphone=(), geolocation=(self), payment=()",
   },
   {
+    key: "X-Robots-Tag",
+    value: "all",
+  },
+  {
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
@@ -52,6 +56,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,
+  productionBrowserSourceMaps: false,
   async headers() {
     return [
       {

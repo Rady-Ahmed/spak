@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingHelp } from "@/components/layout/FloatingHelp";
 import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
+import { CodeProtection } from "@/components/security/CodeProtection";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -181,6 +182,7 @@ export default function RootLayout({
         <Footer />
         <FloatingHelp />
         <MobileStickyBar />
+        <CodeProtection />
       </body>
     </html>
   );
