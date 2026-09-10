@@ -13,6 +13,7 @@ import { HowItWorks } from "@/components/home/HowItWorks";
 import { WorkGallery } from "@/components/home/WorkGallery";
 import { PlumbingGuides } from "@/components/home/PlumbingGuides";
 import { Testimonials } from "@/components/home/Testimonials";
+import { CostEstimator } from "@/components/home/CostEstimator";
 import { FAQSection } from "@/components/home/FAQSection";
 import { ServiceAreas } from "@/components/home/ServiceAreas";
 import { ServiceRequest } from "@/components/forms/ServiceRequest";
@@ -59,7 +60,10 @@ export default function HomePage() {
       {/* 13. Plumbing Care & Emergency Guides (Feature 6) */}
       <PlumbingGuides />
 
-      {/* 14. Customer Testimonials */}
+      {/* 14. Interactive Cost & Price Estimator */}
+      <CostEstimator />
+
+      {/* 15. Customer Testimonials */}
       <Testimonials />
 
       {/* 15. Smart Service Request Form (WhatsApp Generator + GPS Location Feature 2) */}

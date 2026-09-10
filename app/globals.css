@@ -179,6 +179,31 @@ html.light .backdrop-blur-2xl {
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
+/* Light mode - form inputs & textareas */
+html.light input:not([type="checkbox"]):not([type="radio"]),
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light mode - gradient buttons preserve white text */
+html.light a[class*="bg-gradient"],
+html.light button[class*="bg-gradient"] {
+  color: #ffffff !important;
+}
+
+html.light a[class*="bg-gradient"] *,
+html.light button[class*="bg-gradient"] * {
+  color: #ffffff !important;
+}
+
 /* ===========================
    Smooth theme transitions
    =========================== */

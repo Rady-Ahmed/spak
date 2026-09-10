@@ -61,8 +61,60 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "الرئيسية",
+            item: companyConfig.websiteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "الخدمات",
+            item: `${companyConfig.websiteUrl}/services`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: service.title,
+            item: `${companyConfig.websiteUrl}/services/${service.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        name: service.title,
+        description: service.fullDescription,
+        serviceType: "خدمات سباكة",
+        provider: {
+          "@type": "Plumber",
+          name: companyConfig.name,
+          telephone: companyConfig.phone,
+          url: companyConfig.websiteUrl,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "الطائف",
+            addressRegion: "منطقة مكة المكرمة",
+            addressCountry: "SA",
+          },
+        },
+        areaServed: companyConfig.serviceAreas,
+      },
+    ],
+  };
+
   return (
     <div className="pt-28 pb-20 bg-slate-950 text-white min-h-screen" dir="rtl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb & Hero Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12">
         {/* Breadcrumb */}
