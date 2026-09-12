@@ -49,11 +49,11 @@ export const Hero: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.2] sm:leading-[1.18] text-white">
-              حلول سباكة{" "}
+              أفضل سباك في الطائف |{" "}
               <span className="bg-gradient-to-l from-cyan-400 via-blue-400 to-blue-500 bg-clip-text text-transparent">
-                احترافية وسريعة
+                حلول سباكة احترافية
               </span>{" "}
-              تصل إليك عندما تحتاجها
+              على مدار 24 ساعة
             </h1>
 
             {/* Supporting Copy */}

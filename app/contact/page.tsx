@@ -15,9 +15,26 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "تواصل معنا | سباك الطائف - فَنّي الطائف لحجز فني واستشارات فورية",
+  title: "تواصل معنا | رقم سباك الطائف 0502123049 - حجز فني واستشارة فورية",
   description:
-    "تواصل مباشرة مع فَنّي الطائف لخدمات السباكة والصيانة المنزلية عبر الهاتف 0560935248، واتساب، أو حجز موعد مباشر. خدمة طوارئ 24 ساعة في جميع أحياء الطائف.",
+    "تواصل مباشرة مع فَنّي الطائف لخدمات السباكة والصيانة المنزلية عبر الهاتف 0502123049 أو واتساب لحجز موعد فوري. خدمة طوارئ 24 ساعة في جميع أحياء الطائف وضواحيها.",
+  alternates: {
+    canonical: `${companyConfig.websiteUrl}/contact`,
+  },
+  openGraph: {
+    title: "تواصل معنا | رقم سباك الطائف 0502123049 - فَنّي الطائف",
+    description:
+      "قنوات اتصال مباشرة واستجابة فورية 24/7 لكافة مشكلات وأعطال السباكة الطارئة في الطائف.",
+    url: `${companyConfig.websiteUrl}/contact`,
+    images: [
+      {
+        url: `${companyConfig.websiteUrl}/images/hero-plumbing-tech.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "تواصل مع سباك الطائف",
+      },
+    ],
+  },
 };
 
 export default function ContactPage() {

@@ -39,13 +39,13 @@ export const companyConfig: CompanyConfig = {
   subTagline: "فريق فَنّي الطائف المعتمد متاح 24/7 للتعامل مع كافة مشكلات السباكة الطارئة والتركيبات الحديثة بأحدث المعدات.",
 
   // أرقام التواصل
-  phone: "+966560935248",
-  displayPhone: "056 093 5248",
-  emergencyPhone: "+966560935248",
+  phone: "+966502123049",
+  displayPhone: "050 212 3049",
+  emergencyPhone: "+966502123049",
 
   // واتساب (رقم دولي بدون علامة + أو مسافات في الرابط)
-  whatsapp: "966560935248",
-  displayWhatsapp: "056 093 5248",
+  whatsapp: "966502123049",
+  displayWhatsapp: "050 212 3049",
 
   // البريد والعنوان
   email: "info@spakpro.com",

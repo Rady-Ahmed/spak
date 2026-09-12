@@ -19,9 +19,26 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "عن الشركة وخبراتنا",
+  title: "من نحن | خبرات فَنّي الطائف لخدمات السباكة والصيانة المنزلية",
   description:
-    "تعرف على فَنّي الطائف: فريق فني معتمد بخبرة تزيد عن 10 سنوات في صيانة وتأسيس شبكات السباكة الحديثة وحلول كشف التسربات دون تكسير في الطائف.",
+    "تعرف على فَنّي الطائف: فريق فني معتمد بخبرة تزيد عن 10 سنوات في صيانة وتأسيس شبكات السباكة الحديثة وحلول كشف التسربات دون تكسير في الطائف. جودة، التزام، وضمان معتمد.",
+  alternates: {
+    canonical: `${companyConfig.websiteUrl}/about`,
+  },
+  openGraph: {
+    title: "عن فَنّي الطائف | خبراء السباكة والصيانة المنزلية 24/7",
+    description:
+      "فريق فني معتمد بخبرة أكثر من 10 سنوات وأحدث المعدات لكشف التسربات وصيانة السباكة في الطائف.",
+    url: `${companyConfig.websiteUrl}/about`,
+    images: [
+      {
+        url: `${companyConfig.websiteUrl}/images/hero-plumbing-tech.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "عن فَنّي الطائف لخدمات السباكة",
+      },
+    ],
+  },
 };
 
 export default function AboutPage() {

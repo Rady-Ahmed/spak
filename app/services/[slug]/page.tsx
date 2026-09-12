@@ -43,12 +43,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const pageUrl = `${companyConfig.websiteUrl}/services/${service.slug}`;
+
   return {
-    title: `${service.title} | ${companyConfig.name}`,
-    description: service.shortDescription,
+    title: `${service.title} في الطائف | سباك الطائف 24 ساعة معتمد`,
+    description: `${service.shortDescription} اتصل الآن بفريق فَنّي الطائف على 0502123049 للحصول على فحص فوري وخدمة معتمدة بضمان.`,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: `${service.title} | ${companyConfig.name}`,
+      title: `${service.title} في الطائف | سباك الطائف معتمد`,
       description: service.shortDescription,
+      url: pageUrl,
+      images: [
+        {
+          url: `${companyConfig.websiteUrl}/images/hero-plumbing-tech.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${service.title} في الطائف`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} في الطائف | فَنّي الطائف`,
+      description: service.shortDescription,
+      images: [`${companyConfig.websiteUrl}/images/hero-plumbing-tech.jpg`],
     },
   };
 }

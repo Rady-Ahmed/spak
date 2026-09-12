@@ -20,9 +20,26 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "خدمات السباكة المتكاملة",
+  title: "خدمات السباكة المتكاملة في الطائف | كشف تسربات وتسليك وصيانة 24/7",
   description:
-    "استكشف كافة خدمات السباكة المنزلية والتجارية: كشف تسريب المياه، صيانة السخانات، تسليك الصرف، وتركيب الأدوات الصحية بأعلى دقة وضمان معتمد.",
+    "دليل شامل لكافة خدمات السباكة في الطائف: كشف تسربات المياه بدون تكسير، تسليك مجاري بالضغط، صيانة وتركيب السخانات، وتأسيس الفلل بضمان معتمد. اتصل الآن 0502123049.",
+  alternates: {
+    canonical: `${companyConfig.websiteUrl}/services`,
+  },
+  openGraph: {
+    title: "خدمات السباكة المتكاملة في الطائف | فَنّي الطائف 24/7",
+    description:
+      "خدمات سباكة احترافية وطوارئ 24 ساعة في جميع أحياء الطائف مع ضمان رسمي وأجهزة كشف حديثة.",
+    url: `${companyConfig.websiteUrl}/services`,
+    images: [
+      {
+        url: `${companyConfig.websiteUrl}/images/hero-plumbing-tech.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "خدمات السباكة المتكاملة في الطائف",
+      },
+    ],
+  },
 };
 
 export default function ServicesPage() {
@@ -55,7 +72,7 @@ export default function ServicesPage() {
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          خدمات السباكة الاحترافية المتكاملة
+          خدمات السباكة الاحترافية في الطائف
         </h1>
 
         <p className="mt-4 text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
